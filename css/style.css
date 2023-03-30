@@ -1,34 +1,9 @@
 @import "https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap";
-html {
-  scroll-behavior: smooth;
-}
-/* tema blanco y negro */
-.blackandwhite{
-  --background:#ffffff;
-  --lightbackground:#ebaddd;
-  --texts:#000000;
-  --accenttexts:#c07ef1;
-  --accentcolor:#b56de5
-  --footer: #ffffff;
-  --midcolor:#8f8f8f;
-}
-/* tema morado */
-.purple{
-  --background:#be89e2;
-  --lightbackground:#ebaddd;
-  --texts:#FFF;
-  --accenttexts:#6a557a;
-  --accentcolor:#b56de5;
-  --midcolor:#a1a1a1;
-}
-.oldpurple{
+:root {
   --background:#E56DCC;
-  --lightbackground:#ebaddd;
   --texts:#FFF;
- 
   --accenttexts:#C51383;
   --accentcolor:#4F1C82;
-  --midcolor:#868686;
 }
 
 * {
@@ -40,7 +15,7 @@ html {
 }
 
 body {
-  background: var(--background);
+  background: #e77da8;
 }
 
 main {
@@ -62,7 +37,7 @@ main .banner::before {
   width: 100%;
   height: 200px;
   z-index: 1000;
-  background: linear-gradient(to top, var (--background), transparent);
+  background: linear-gradient(to top, #111, transparent);
 }
 main .banner .content {
   position: relative;
@@ -72,7 +47,7 @@ main .banner .content {
 }
 main .banner .content h2 {
   color: var(--texts);
-  font-size: 5em;
+  font-size: 5rem;
 }
 main .banner .content p {
   color: var(--texts);
@@ -114,10 +89,8 @@ main .banner2::before {
   width: 100%;
   height: 400px;
   z-index: 1000;
-  background: linear-gradient(to top, var (--background), transparent);
+  background: linear-gradient(to top, var(--background), transparent);
 }
-
-
 main .banner2::after {
   content: "";
   position: absolute;
@@ -126,7 +99,7 @@ main .banner2::after {
   width: 100%;
   height: 400px;
   z-index: 1000;
-  background: linear-gradient(to bottom, var (var(--background)), transparent);
+  background: linear-gradient(to bottom, var(--background), transparent);
 }
 main .destination {
   text-align: center;
@@ -149,7 +122,7 @@ main .destination .destinationList .box {
   position: relative;
   min-width: 350px;
   height: 480px;
-  background: var(--accenttexts);
+  background: var(--background);
   transition: 0.5s;
   margin: 10px;
   overflow: hidden;
@@ -196,7 +169,7 @@ main .banner3::before {
   width: 100%;
   height: 400px;
   z-index: 1000;
-  background: linear-gradient(to top, var(--accentcolor), transparent);
+  background: linear-gradient(to top, var(--background), transparent);
 }
 main .banner3:after {
   content: "";
@@ -206,15 +179,13 @@ main .banner3:after {
   width: 100%;
   height: 400px;
   z-index: 1000;
-  background: linear-gradient(to bottom, var(--accentcolor), transparent);
+  background: linear-gradient(to bottom, var(--background), transparent);
 }
 main .footer {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  background-color: var(--accenttexts);
-  padding:3rem;
 }
 main .footer .sci {
   position: relative;
@@ -235,7 +206,7 @@ main .footer .copyright {
   margin-top: 20px;
   font-size: 18px;
   font-weight: 300;
-  color: var(--midcolor);
+  color: var(--accenttexts);
   text-align: center;
 }
 main .footer .copyright a {
@@ -263,15 +234,12 @@ a.btn {
   display: inline-block;
   margin-top: 30px;
   background: var(--background);
-  color: var(--texts);
+  color: --ac;
   text-decoration: none;
   padding: 10px 30px;
   border-radius: 10px;
 }
-/* en este de abajo se define el color de los botones en hover y arriba, el del botón de normal */
-a.btn:hover{
-  background-color:var(--lightbackground);
-}
+
 .titleText {
   font-weight: 600;
   color: var(--texts);
@@ -297,8 +265,7 @@ a.btn:hover{
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
 }
 
 .fitBg {
@@ -307,11 +274,8 @@ a.btn:hover{
   left: 0;
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-     /* Esta línea de opacidad define el fondo inicial de todas las imágenes, que tienen como un ligero coloring,
-     cuanto más lo bajamos más se ve el fondo en vez de la imagen. */
-  opacity: 0.5;
+  object-fit: cover;
+  opacity: 0.8;
 }
 
 @media (max-width: 600px) {
@@ -319,7 +283,8 @@ a.btn:hover{
     padding: 40px;
   }
   .banner .content h2 {
-    font-size: 2.5em;
+    font-size: 2.5em !important;
+    margin: 1vh 0 1vh 0 !important;
   }
   .banner .content p {
     font-size: 1em;
@@ -368,15 +333,16 @@ a.btn:hover{
 }
 
 ::-webkit-scrollbar-track {
-  background: #222;
+  background: var(--accentcolor);
 }
 
 ::-webkit-scrollbar-thumb {
   background: #48daee;
-  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--midcolor);
-}/*# sourceMappingURL=style.css.map */
+  background: #555;
+}
+
+/*# sourceMappingURL=style.css.map */
